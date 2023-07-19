@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./map.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/jotabraga/sync-map/issues"
   },
-  "homepage": "https://github.com/jotabraga/sync-map#readme"
+  "homepage": "https://github.com/jotabraga/sync-map#readme",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
