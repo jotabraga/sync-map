@@ -43,3 +43,8 @@ assert.deepEqual(
   JSON.stringify([...map]),
   '[[1,"one"],["Jota",{"text":"two"}],[true,null]]'
 );
+
+//can use for of as well
+for (const [key, value] of map) {
+  console.log({ key, value });
+}
