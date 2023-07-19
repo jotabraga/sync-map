@@ -33,3 +33,13 @@ assert.deepStrictEqual(map.size, 4);
 
 //to verify if item exists in map by key
 assert.ok(map.has(onlyRefWorks));
+
+//delete value
+assert.ok(map.delete(onlyRefWorks));
+
+//there's no way to iterate between items in object
+//in map we have the generator standart and can use [...map]
+assert.deepEqual(
+  JSON.stringify([...map]),
+  '[[1,"one"],["Jota",{"text":"two"}],[true,null]]'
+);
