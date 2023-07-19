@@ -48,3 +48,22 @@ assert.deepEqual(
 for (const [key, value] of map) {
   console.log({ key, value });
 }
+
+//there is securit issues in objects which depends on key name
+//like ({}).toStrig() === '[object Object] => ({toString: () => 'Hey'}).toString() === 'Hey
+//(toString, valueOf, constructor, etc)...this doesn't happen with map
+const actor = {
+  name: "Craig",
+  toString: () => "Ronaldo",
+};
+
+map.set(actor);
+
+assert.throws(() => map.get(actor).toString, TypeError);
+
+//there is no way to clean object without undersign, but map has clear
+map.clear();
+assert.deepStrictEqual([...map.keys()], []);
+
+//conclusion: map is awesome for add frequently key values and wanna object as database
+//good for clean values without undersign every key/value
