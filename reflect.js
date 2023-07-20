@@ -21,3 +21,6 @@ assert.throws(() => myObj.add.apply({}, []), {
 //using reflect
 const result = Reflect.apply(myObj.add, { arg1: 10, arg2: 20 }, [200]);
 assert.deepStrictEqual(result, 230);
+
+assert.ok("superman" in { superman: true });
+assert.ok(Reflect.has({ superman: true }, "superman"));
